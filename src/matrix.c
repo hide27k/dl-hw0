@@ -102,9 +102,15 @@ matrix matmul(matrix a, matrix b)
     // TODO: 1.4 - Implement matrix multiplication. Make sure it's fast!
     for (int i = 0; i < a.rows; i++) {
         for (int j = 0; j < a.cols; j++) {
-            for (int k = 0; k < b.rows; k++) {
+            for (int k = 0; k < b.cols; k++) {
                 c.data[i * b.cols + k] += a.data[i * a.cols + j] * b.data[j * b.cols + k];
-            }
+            	/*if (j * b.cols + k >= b.rows * b.cols)
+			printf("b matrix out of bounds!");
+		if (i * a.cols + j >= a.rows * a.cols)
+                        printf("a matrix out of bounds!");
+		if (i * b.cols + k >= c.rows * c.cols)
+                        printf("c matrix out of bounds!");*/
+	    }
         }
     }
 
