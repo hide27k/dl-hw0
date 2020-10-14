@@ -104,7 +104,7 @@ matrix matmul(matrix a, matrix b)
         for (int j = 0; j < a.cols; j++) {
             for (int k = 0; k < b.cols; k++) {
                 c.data[i * b.cols + k] += a.data[i * a.cols + j] * b.data[j * b.cols + k];
-	        }
+	    }
         }
     }
     return c;

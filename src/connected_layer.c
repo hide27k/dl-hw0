@@ -68,6 +68,7 @@ void backward_connected_layer(layer l, matrix prev_delta)
     // Calculate the updates for the bias terms using backward_bias
     // The current bias deltas are stored in l.db
     backward_bias(delta, l.db);
+  
     // Then calculate dL/dw. Use axpy to subtract this dL/dw into any previously stored
     // updates for our weights, which are stored in l.dw
     // l.dw = l.dw - dL/dw
