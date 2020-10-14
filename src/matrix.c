@@ -70,7 +70,7 @@ matrix transpose_matrix(matrix m)
     matrix t = make_matrix(m.cols, m.rows);
     for (int i = 0; i < m.cols; i++) {
         for (int j = 0; j < m.rows; j++) {
-            t.data[i * m.rows + i] = m.data[j * m.cols + i];
+            t.data[i * m.rows + j] = m.data[j * m.cols + i];
         }
     }
 
@@ -104,16 +104,9 @@ matrix matmul(matrix a, matrix b)
         for (int j = 0; j < a.cols; j++) {
             for (int k = 0; k < b.cols; k++) {
                 c.data[i * b.cols + k] += a.data[i * a.cols + j] * b.data[j * b.cols + k];
-            	/*if (j * b.cols + k >= b.rows * b.cols)
-			printf("b matrix out of bounds!");
-		if (i * a.cols + j >= a.rows * a.cols)
-                        printf("a matrix out of bounds!");
-		if (i * b.cols + k >= c.rows * c.cols)
-                        printf("c matrix out of bounds!");*/
-	    }
+	        }
         }
     }
-
 
     return c;
 }
