@@ -104,16 +104,9 @@ matrix matmul(matrix a, matrix b)
         for (int j = 0; j < a.cols; j++) {
             for (int k = 0; k < b.cols; k++) {
                 c.data[i * b.cols + k] += a.data[i * a.cols + j] * b.data[j * b.cols + k];
-            	/*if (j * b.cols + k >= b.rows * b.cols)
-			printf("b matrix out of bounds!");
-		if (i * a.cols + j >= a.rows * a.cols)
-                        printf("a matrix out of bounds!");
-		if (i * b.cols + k >= c.rows * c.cols)
-                        printf("c matrix out of bounds!");*/
-	    }
+	        }
         }
     }
-
 
     return c;
 }
