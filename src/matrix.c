@@ -70,7 +70,7 @@ matrix transpose_matrix(matrix m)
     matrix t = make_matrix(m.cols, m.rows);
     for (int i = 0; i < m.cols; i++) {
         for (int j = 0; j < m.rows; j++) {
-            t.data[i * m.rows + i] = m.data[j * m.cols + i];
+            t.data[i * m.rows + j] = m.data[j * m.cols + i];
         }
     }
 
