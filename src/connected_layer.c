@@ -66,15 +66,11 @@ void backward_connected_layer(layer l, matrix prev_delta)
     gradient_matrix(out, l.activation, delta); 
     // Calculate the updates for the bias terms using backward_bias
     // The current bias deltas are stored in l.db
-<<<<<<< HEAD
     backward_bias(delta, l.db);
     // Then calculate dL/dw. Use axpy to add this dL/dw into any previously stored
     // updates for our weights, which are stored in l.dw
     matrix delta_w = matmul(transpose_matrix(in), delta);
-    axpy_matrix(1, delta_w, l.dw);
-=======
->>>>>>> 0ecc956617e44e2f22304a09cb12a17bc406d29d
-
+    axpy_matrix(-1, delta_w, l.dw);
     // Then calculate dL/dw. Use axpy to subtract this dL/dw into any previously stored
     // updates for our weights, which are stored in l.dw
     // l.dw = l.dw - dL/dw
